@@ -7,7 +7,7 @@ ppCanvas.id = "cellDiv";
 pixelPainter.appendChild(ppCanvas);
 
 //forloop to create all pixel boxed as divs
-var cell = Array(2500).fill(1);
+var cell = Array(2400).fill(1);
 for (var i =0; i < cell.length; i++){
   cell[i] = document.createElement("div");
   cell[i].className = "cells";
