@@ -1,4 +1,4 @@
-var colorArray = ['red','blue','yellow'];
+var colorArray = ['#9B59B6','#85C1E9','#F1948A','#F1C40F','#76D7C4','#DC7633','#EAEDED','#AF601A','#21618C'];
 
 
 //create forloop to generate parent div = row
