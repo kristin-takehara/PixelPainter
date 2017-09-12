@@ -8,6 +8,7 @@ var clearButton = document.createElement("button");
   clearButton.id = "action";
   clearButton.innerHTML = "CLEAR";
   clearButton.addEventListener("click", clearCanvas);
+
   pixelPainter.appendChild(clearButton);
 
 //eraser button code:
@@ -16,6 +17,7 @@ var clearButton = document.createElement("button");
   clearButton.innerHTML = "ERASER";
   clearButton.addEventListener("click", eraserActivated);
   pixelPainter.appendChild(clearButton);
+
 
 
 
