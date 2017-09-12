@@ -1,3 +1,6 @@
+var colorArray = ['red','blue','yellow'];
+
+
 //create forloop to generate parent div = row
 for(var i = 0; i < 51; i++){
   var ppCanvas = document.createElement("div");
@@ -11,13 +14,9 @@ for(var i = 0; i < 51; i++){
 }
 
 //create new set of parent and child divs for colors:
-for (var k = 0; k < 11; k++){
+for (var k = 0; k < colorArray.length; k++){
 	var colorCanvas = document.createElement('div');
+	colorCanvas.style.backgroundColor = colorArray[k];
 	colorCanvas.className = "paintParentRow";
 	pixelPainter.appendChild(colorCanvas);
-	for (var l = 0; l < 11; l++){
-		var paintColors = document.createElement('div');
-		paintColors.className = "paintBox";
-		colorCanvas.appendChild(paintColors);
-	}
 }
