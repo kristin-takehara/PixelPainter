@@ -18,9 +18,9 @@ h1{
   border: 1px solid black;
 }
 
-#eraseAll{
+#action{
   display: inline-block;
   height: 50px;
-  width: 50px;
+  width: 60px;
   border: 1px solid black;
 }

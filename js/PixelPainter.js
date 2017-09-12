@@ -2,11 +2,21 @@ var colorArray = ['#9B59B6','#85C1E9','#F1948A','#F1C40F','#76D7C4','#DC7633','#
 var selectedColor;
 var width = 0;
 var height = 0;
+
+//clear button code: 
 var clearButton = document.createElement("button");
-  clearButton.id = "eraseAll";
+  clearButton.id = "action";
   clearButton.innerHTML = "CLEAR";
   clearButton.addEventListener("click", clearCanvas);
   pixelPainter.appendChild(clearButton);
+
+//eraser button code:
+var clearButton = document.createElement("button");
+  clearButton.id = "action";
+  clearButton.innerHTML = "ERASER";
+  clearButton.addEventListener("click", eraserActivated);
+  pixelPainter.appendChild(clearButton);
+
 
 
 //create forloop to generate parent div = row
@@ -20,7 +30,7 @@ for(var i = 0; i < width; i++){
   //this for loop creates divs within the parent div row
   for (var j = 0; j < height; j++){
     var cells = document.createElement("div");
-    cells.addEventListener("mouseover", changeColor);
+    cells.addEventListener("mousemove", changeColor);
     cells.className = "cellsInRow";
     ppCanvas.appendChild(cells);
   } 
@@ -38,20 +48,29 @@ for (var k = 0; k < colorArray.length; k++){
 }
 divCanvas(51,51);
 
-//create new set of parent and child divs for colors:
+
 function changeColor(){
   event.target.style.backgroundColor = selectedColor;
 }
 
-
+//sets colors by selecting the color pallete
 function selectColor(){
   selectedColor = event.target.style.backgroundColor;
 }
 
-//set cells to background white
+//set cells to background white, this is clears canvas for more creations
 function clearCanvas(){
   cells = document.getElementsByClassName("cellsInRow");
   for (var i =0; i < cells.length; i++){
     cells[i].style.backgroundColor = 'fdfefe';
   }
 }
+
+function eraserActivated(){
+  selectedColor = event.target.style.backgroundColor;
+
+}
+
+
+
+
