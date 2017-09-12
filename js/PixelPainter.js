@@ -9,3 +9,15 @@ for(var i = 0; i < 51; i++){
     ppCanvas.appendChild(cells);
   }
 }
+
+//create new set of parent and child divs for colors:
+for (var k = 0; k < 11; k++){
+	var colorCanvas = document.createElement('div');
+	colorCanvas.className = "paintParentRow";
+	pixelPainter.appendChild(colorCanvas);
+	for (var l = 0; l < 11; l++){
+		var paintColors = document.createElement('div');
+		paintColors.className = "paintBox";
+		colorCanvas.appendChild(paintColors);
+	}
+}
