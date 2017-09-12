@@ -8,7 +8,7 @@ for(var i = 0; i < 51; i++){
   pixelPainter.appendChild(ppCanvas);
   for (var j = 0; j < 61; j++){
     var cells = document.createElement("div");
-    cells.addEventListener("click", changeColor);
+    cells.addEventListener("mouseover", changeColor);
     cells.className = "cellsInRow";
     ppCanvas.appendChild(cells);
   }
