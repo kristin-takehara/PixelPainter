@@ -1,16 +1,11 @@
-//console.log('Baseem was here');
-
-
-//cellDiv to hold all other divs
-var ppCanvas = document.createElement("div");
-ppCanvas.id = "cellDiv";
-pixelPainter.appendChild(ppCanvas);
-
-//forloop to create all pixel boxed as divs
-var cell = Array(2400).fill(1);
-for (var i =0; i < cell.length; i++){
-  cell[i] = document.createElement("div");
-  cell[i].className = "cells";
-  ppCanvas.appendChild(cell[i]);
+//create forloop to generate parent div = row
+for(var i = 0; i < 51; i++){
+  var ppCanvas = document.createElement("div");
+  ppCanvas.className = "cellDivRow";
+  pixelPainter.appendChild(ppCanvas);
+  for (var j = 0; j < 61; j++){
+    var cells = document.createElement("div");
+    cells.className = "cellsInRow";
+    ppCanvas.appendChild(cells);
+  }
 }
-
