@@ -1,0 +1,14 @@
+.cells{
+  height:10px;
+  width: 10px;
+  border: 1px solid black; 
+  display: inline-block;
+  z-index: -1;
+}
+
+#cellDiv{
+  /*align-content: center;*/
+  height:600px;
+  width:600px;
+  border: 1px solid black;
+}
