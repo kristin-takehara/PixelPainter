@@ -2,6 +2,7 @@ var colorArray = ['#9B59B6','#85C1E9','#F1948A','#F1C40F','#76D7C4','#DC7633','#
 var selectedColor;
 var width = 0;
 var height = 0;
+var draw = null;
 
 //clear button code: 
 var clearButton = document.createElement("button");
@@ -32,6 +33,8 @@ for(var i = 0; i < width; i++){
   //this for loop creates divs within the parent div row
   for (var j = 0; j < height; j++){
     var cells = document.createElement("div");
+    cells.addEventListener("mousedown",down);
+    cells.addEventListener("mouseup",up);
     cells.addEventListener("mousemove", changeColor);
     cells.className = "cellsInRow";
     ppCanvas.appendChild(cells);
@@ -50,9 +53,20 @@ for (var k = 0; k < colorArray.length; k++){
 }
 divCanvas(51,51);
 
+function down(){
+  draw = true;
+  
+}
+
+function up(){
+  draw = false;
+}
 
 function changeColor(){
-  event.target.style.backgroundColor = selectedColor;
+  if (draw === true){
+    event.target.style.backgroundColor = selectedColor;
+  }
+ 
 }
 
 //sets colors by selecting the color pallete
