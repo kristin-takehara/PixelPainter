@@ -72,6 +72,21 @@ var saveButton = document.createElement("button");
   saveButton.addEventListener("click", clearCanvas);
   buttonBox3.appendChild(saveButton);
 
+//BUTTON BOX 4:
+var buttonBox4 = document.createElement("div");
+buttonBox.className = "btnBox4";
+pixelPainter.appendChild(buttonBox4); 
+
+//FILL button code:
+var fillButton = document.createElement("button");
+  fillButton.id = "action4";
+  fillButton.innerHTML = "FILL";
+  fillButton.addEventListener("click", fillSpace);
+
+  buttonBox4.appendChild(fillButton);
+
+
+
 
 //PIXEL PAINTER FUNCTIONS:
 function down(){
@@ -106,6 +121,17 @@ function clearCanvas(){
 function eraserActivated(){
   selectedColor = event.target.style.backgroundColor;
 
+}
+
+function fillSpace(){
+  cells = document.getElementsByClassName("cellsInRow");
+  for (var i =0; i < cells.length; i++){
+    if (cells[i].style.backgroundColor){
+    }
+    else{
+      cells[i].style.backgroundColor = selectedColor;
+    }  
+  }
 }
 
 var footer = document.createElement("div");

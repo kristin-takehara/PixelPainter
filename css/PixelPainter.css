@@ -91,6 +91,21 @@ h1{
   font-size: 1.5vw;
 }
 
+#action4{
+  text-align: center;
+  color: bluegit;
+  display: inline-block;
+  height: 3.5vw;
+  width: 6.5vw;
+  border: 1px solid black;
+  border-radius: 1vw;
+  margin-top: 30px;
+  background-color: lightblue;
+  font-family:'Baloo Tammudu', cursive;
+  font-size: 1.5vw;
+}
+
+
 .ftText{
   margin-top: 10px;
   font-family: 'Gloria Hallelujah', cursive;
