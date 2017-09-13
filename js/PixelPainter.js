@@ -114,7 +114,7 @@ function selectColor(){
 function clearCanvas(){
   cells = document.getElementsByClassName("cellsInRow");
   for (var i =0; i < cells.length; i++){
-    cells[i].style.backgroundColor = 'fdfefe';
+    cells[i].style.backgroundColor = null;
   }
 }
 
