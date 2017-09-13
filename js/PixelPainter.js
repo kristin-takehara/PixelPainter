@@ -10,9 +10,8 @@ canvasBox.className = "bigBox";
 pixelPainter.appendChild(canvasBox);
 
 //create forloop to generate parent div = row
-
 function divCanvas(width, height){
-  //this for loop sets the parent div row
+//this for loop sets the parent div row
 for(var i = 0; i < width; i++){
   var ppCanvas = document.createElement("div");
   ppCanvas.className = "cellDivRow";
@@ -25,9 +24,9 @@ for(var i = 0; i < width; i++){
     cells.addEventListener("mousemove", changeColor);
     cells.className = "cellsInRow";
     ppCanvas.appendChild(cells);
-  } 
-  
+  }  
 }
+
 //this for loop creates the color pallete which is divs in the parent row
 for (var k = 0; k < colorArray.length; k++){
   var colorCanvas = document.createElement('div');
@@ -35,7 +34,7 @@ for (var k = 0; k < colorArray.length; k++){
   colorCanvas.addEventListener("click", selectColor);
   colorCanvas.className = "paintParentRow";
   pixelPainter.appendChild(colorCanvas);
-}
+  }
 }
 divCanvas(31,61);
 
@@ -71,10 +70,10 @@ buttonBox.className = "btnBox";
 pixelPainter.appendChild(buttonBox);
 //eraser button code:
 var clearButton = document.createElement("button");
-  clearButton.id = "action";
-  clearButton.innerHTML = "ERASER";
-  clearButton.addEventListener("click", eraserActivated);
-  buttonBox.appendChild(clearButton);
+clearButton.id = "action";
+clearButton.innerHTML = "ERASER";
+clearButton.addEventListener("click", eraserActivated);
+buttonBox.appendChild(clearButton);
 
 // //BUTTON BOX 2:
 // var buttonBox2 = document.createElement("div");
@@ -83,11 +82,10 @@ var clearButton = document.createElement("button");
 
 //FILL button code:
 var fillButton = document.createElement("button");
-  fillButton.id = "action2";
-  fillButton.innerHTML = "FILL";
-  fillButton.addEventListener("click", fillSpace);
-
-  buttonBox.appendChild(fillButton);
+fillButton.id = "action2";
+fillButton.innerHTML = "FILL";
+fillButton.addEventListener("click", fillSpace);
+buttonBox.appendChild(fillButton);
 
 //BUTTON BOX 3:
 // var buttonBox3 = document.createElement("div");
@@ -96,10 +94,10 @@ var fillButton = document.createElement("button");
 
 //SAVE button code: 
 var saveButton = document.createElement("button");
-  saveButton.id = "action3";
-  saveButton.innerHTML = "SAVE";
-  saveButton.addEventListener("click", clearCanvas);
-  buttonBox.appendChild(saveButton);
+saveButton.id = "action3";
+saveButton.innerHTML = "SAVE";
+saveButton.addEventListener("click", clearCanvas);
+buttonBox.appendChild(saveButton);
 
 //BUTTON BOX 4:
 var buttonBox4 = document.createElement("div");
@@ -107,15 +105,14 @@ buttonBox.className = "btnBox4";
 pixelPainter.appendChild(buttonBox4); 
 //CLEAR button code: 
 var clearButton = document.createElement("button");
-  clearButton.id = "action4";
-  clearButton.innerHTML = "CLEAR";
-  clearButton.addEventListener("click", clearCanvas);
-  buttonBox4.appendChild(clearButton);
+clearButton.id = "action4";
+clearButton.innerHTML = "CLEAR";
+clearButton.addEventListener("click", clearCanvas);
+buttonBox4.appendChild(clearButton);
 
 //PIXEL PAINTER FUNCTIONS:
 function down(){
-  draw = true;
-  
+  draw = true; 
 }
 
 function up(){
@@ -125,8 +122,7 @@ function up(){
 function changeColor(){
   if (draw === true){
     event.target.style.backgroundColor = selectedColor;
-  }
- 
+  } 
 }
 
 //sets colors by selecting the color pallete
@@ -144,12 +140,11 @@ function clearCanvas(){
 
 function eraserActivated(){
   selectedColor = event.target.style.backgroundColor;
-
 }
 
 function fillSpace(){
   cells = document.getElementsByClassName("cellsInRow");
-  for (var i =0; i < cells.length; i++){
+  for (var i = 0; i < cells.length; i++){
     if (cells[i].style.backgroundColor){
     }
     else{
@@ -166,7 +161,7 @@ pixelPainter.appendChild(footer);
 //secret picasso button
 var random = document.querySelectorAll('.cellsInRow')[0];
 random.addEventListener('click', randomColor);
-
+//this function is firing 800 times. Can use SETINTERVAL instead.
 function randomColor(){
 cells = document.getElementsByClassName("cellsInRow");
 for (var i = 0; i < cells.length; i++) {
