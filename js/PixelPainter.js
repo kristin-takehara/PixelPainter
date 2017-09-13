@@ -4,6 +4,10 @@ var width = 0;
 var height = 0;
 var draw = null;
 
+//large div box to hold canvas
+var canvasBox = document.createElement("div");
+canvasBox.className = "bigBox";
+pixelPainter.appendChild(canvasBox);
 
 //create forloop to generate parent div = row
 
@@ -12,7 +16,7 @@ function divCanvas(width, height){
 for(var i = 0; i < width; i++){
   var ppCanvas = document.createElement("div");
   ppCanvas.className = "cellDivRow";
-  pixelPainter.appendChild(ppCanvas);
+  canvasBox.appendChild(ppCanvas);
   //this for loop creates divs within the parent div row
   for (var j = 0; j < height; j++){
     var cells = document.createElement("div");
