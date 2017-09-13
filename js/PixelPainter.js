@@ -163,4 +163,19 @@ footer.className = "ftText";
 footer.innerHTML = "©9.12.2017 appleNapple Inc. ba5eem & kris";
 pixelPainter.appendChild(footer);
 
+//secret picasso button
+var random = document.querySelectorAll('.cellsInRow')[0];
+random.addEventListener('click', randomColor);
+
+function randomColor(){
+cells = document.getElementsByClassName("cellsInRow");
+for (var i = 0; i < cells.length; i++) {
+    (function(i) {
+        setTimeout(function() { 
+          cells[i].style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16); 
+        }, 100 * i);
+        })(i);
+      }
+    }
+
 
