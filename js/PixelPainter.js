@@ -4,23 +4,6 @@ var width = 0;
 var height = 0;
 var draw = null;
 
-//clear button code: 
-var clearButton = document.createElement("button");
-  clearButton.id = "action";
-  clearButton.innerHTML = "CLEAR";
-  clearButton.addEventListener("click", clearCanvas);
-
-  pixelPainter.appendChild(clearButton);
-
-//eraser button code:
-var clearButton = document.createElement("button");
-  clearButton.id = "action";
-  clearButton.innerHTML = "ERASER";
-  clearButton.addEventListener("click", eraserActivated);
-  pixelPainter.appendChild(clearButton);
-
-
-
 
 //create forloop to generate parent div = row
 
@@ -49,10 +32,44 @@ for (var k = 0; k < colorArray.length; k++){
   colorCanvas.className = "paintParentRow";
   pixelPainter.appendChild(colorCanvas);
 }
-
 }
 divCanvas(51,51);
 
+//BUTTON BOX:
+var buttonBox = document.createElement("div");
+buttonBox.className = "btnBox";
+pixelPainter.appendChild(buttonBox);
+//eraser button code:
+var clearButton = document.createElement("button");
+  clearButton.id = "action";
+  clearButton.innerHTML = "ERASER";
+  clearButton.addEventListener("click", eraserActivated);
+  buttonBox.appendChild(clearButton);
+
+//BUTTON BOX 2:
+var buttonBox2 = document.createElement("div");
+buttonBox.className = "btnBox2";
+pixelPainter.appendChild(buttonBox2);  
+//CLEAR button code: 
+var clearButton = document.createElement("button");
+  clearButton.id = "action2";
+  clearButton.innerHTML = "CLEAR";
+  clearButton.addEventListener("click", clearCanvas);
+  buttonBox2.appendChild(clearButton);
+
+//BUTTON BOX 3:
+var buttonBox3 = document.createElement("div");
+buttonBox.className = "btnBox2";
+pixelPainter.appendChild(buttonBox3);  
+//SAVE button code: 
+var saveButton = document.createElement("button");
+  saveButton.id = "action3";
+  saveButton.innerHTML = "SAVE";
+  saveButton.addEventListener("click", clearCanvas);
+  buttonBox3.appendChild(saveButton);
+
+
+//PIXEL PAINTER FUNCTIONS:
 function down(){
   draw = true;
   
@@ -87,6 +104,9 @@ function eraserActivated(){
 
 }
 
-
+var footer = document.createElement("div");
+footer.className = "ftText";
+footer.innerHTML = "©9.12.2017 appleNapple Inc. ba5eem & kris";
+pixelPainter.appendChild(footer);
 
 
