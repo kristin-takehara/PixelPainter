@@ -37,7 +37,33 @@ for (var k = 0; k < colorArray.length; k++){
   pixelPainter.appendChild(colorCanvas);
 }
 }
-divCanvas(31,71);
+divCanvas(31,61);
+
+///////////STAMP SHAPES////////////
+
+//parent div to hold child shape divs
+var shapeBox = document.createElement("div");
+shapeBox.className = "parentShapeBox";
+pixelPainter.appendChild(shapeBox);
+
+//CIRCLE
+var circleBox = document.createElement("div");
+circleBox.className = "circleStamp";
+shapeBox.appendChild(circleBox);
+
+//SQUARE
+var squareBox = document.createElement("div");
+squareBox.className = "squareStamp";
+shapeBox.appendChild(squareBox);
+
+//TRIANGLE
+var triangleBox = document.createElement("div");
+triangleBox.className = "triangleStamp";
+shapeBox.appendChild(triangleBox);
+
+//------------------//
+
+///////////////BUTTONS////////////////
 
 //BUTTON BOX:
 var buttonBox = document.createElement("div");
@@ -50,43 +76,41 @@ var clearButton = document.createElement("button");
   clearButton.addEventListener("click", eraserActivated);
   buttonBox.appendChild(clearButton);
 
-//BUTTON BOX 2:
-var buttonBox2 = document.createElement("div");
-buttonBox.className = "btnBox2";
-pixelPainter.appendChild(buttonBox2);  
-//CLEAR button code: 
-var clearButton = document.createElement("button");
-  clearButton.id = "action2";
-  clearButton.innerHTML = "CLEAR";
-  clearButton.addEventListener("click", clearCanvas);
-  buttonBox2.appendChild(clearButton);
+// //BUTTON BOX 2:
+// var buttonBox2 = document.createElement("div");
+// buttonBox.className = "btnBox2";
+// pixelPainter.appendChild(buttonBox2); 
+
+//FILL button code:
+var fillButton = document.createElement("button");
+  fillButton.id = "action2";
+  fillButton.innerHTML = "FILL";
+  fillButton.addEventListener("click", fillSpace);
+
+  buttonBox.appendChild(fillButton);
 
 //BUTTON BOX 3:
-var buttonBox3 = document.createElement("div");
-buttonBox.className = "btnBox2";
-pixelPainter.appendChild(buttonBox3);  
+// var buttonBox3 = document.createElement("div");
+// buttonBox.className = "btnBox2";
+// pixelPainter.appendChild(buttonBox3);  
+
 //SAVE button code: 
 var saveButton = document.createElement("button");
   saveButton.id = "action3";
   saveButton.innerHTML = "SAVE";
   saveButton.addEventListener("click", clearCanvas);
-  buttonBox3.appendChild(saveButton);
+  buttonBox.appendChild(saveButton);
 
 //BUTTON BOX 4:
 var buttonBox4 = document.createElement("div");
 buttonBox.className = "btnBox4";
 pixelPainter.appendChild(buttonBox4); 
-
-//FILL button code:
-var fillButton = document.createElement("button");
-  fillButton.id = "action4";
-  fillButton.innerHTML = "FILL";
-  fillButton.addEventListener("click", fillSpace);
-
-  buttonBox4.appendChild(fillButton);
-
-
-
+//CLEAR button code: 
+var clearButton = document.createElement("button");
+  clearButton.id = "action4";
+  clearButton.innerHTML = "CLEAR";
+  clearButton.addEventListener("click", clearCanvas);
+  buttonBox4.appendChild(clearButton);
 
 //PIXEL PAINTER FUNCTIONS:
 function down(){
