@@ -33,7 +33,7 @@ for (var k = 0; k < colorArray.length; k++){
   pixelPainter.appendChild(colorCanvas);
 }
 }
-divCanvas(51,51);
+divCanvas(31,71);
 
 //BUTTON BOX:
 var buttonBox = document.createElement("div");
